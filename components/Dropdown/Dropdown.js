@@ -19,8 +19,16 @@ class Dropdown {
   toggleContent() {
     
     // Toggle the ".dropdown-hidden" class off and on
+    this.content.style.left = "-300px";
     this.content.classList.toggle("dropdown-hidden");
-  }
+    if (this.content.classList.length > 1) TweenLite.to(this.content, 1, { left: "-100px" });
+    else TweenLite.to(this.content, 1, { left: 0 });
+
+    const page = document.querySelector(".header-container");
+    this.page.addEventListener("click", () => {
+        TweenLite.to(this.content, 1, { left: "-300px" });
+  })
+}
 }
 
 

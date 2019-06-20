@@ -5,13 +5,13 @@ class TabLink {
     this.element = element;
     
     // Get the custom data attribute on the Link
-    this.data = document.querySelector(`.tabs-link[data-tab='${element.dataset.tab}']`);
+    this.data = element.dataset.tab;
 
     // Using the custom data attribute get the associated Item element
     this.itemElement = document.querySelector(`.tabs-item[data-tab='${element.dataset.tab}']`);
     
     // Using the Item element, create a new instance of the TabItem class
-    this.tabItem = new TabItem(this.element);
+    this.tabItem = new TabItem(this.itemElement);
     
     // Add a click event listener on this instance, calling the select method on click
     this.element.addEventListener("click", () => this.select());
@@ -19,7 +19,7 @@ class TabLink {
 
   select() {
     // Get all of the elements with the tabs-link class
-    const links = element.querySelectorAll(".tabs-link");
+    const links = document.querySelectorAll(".tabs-link");
 
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
     Array.from(links).forEach(link => link.classList.remove("tabs-link-selected"));
@@ -28,7 +28,7 @@ class TabLink {
     this.element.classList.add("tabs-link-selected");
     
     // Call the select method on the item associated with this link
-    this.select();
+    this.tabItem.select();
   }
 }
 
@@ -40,10 +40,10 @@ class TabItem {
 
   select() {
     // Select all ".tabs-item" elements from the DOM
-    const items = element.querySelector(".tabs-item");
+    const items = document.querySelectorAll(".tabs-item");
 
     // Remove the class "tabs-item-selected" from each element
-    this.element.classList.remove("tabs-item-selected");
+    items.forEach(item => item.classList.remove("tabs-item-selected"));
     // Add a class named "tabs-item-selected" to this element
     this.element.classList.add("tabs-item-selected");
   }
@@ -60,3 +60,60 @@ class TabItem {
 */
 
 links = document.querySelectorAll(".tabs-link").forEach(link => new TabLink(link));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function tabBuilder(sample){
+//   const article = document.createElement(".tabs-item");
+//   article.classList.add(".tabs-item");
+//   const title = document.createElement("div");
+//   h2.textContent = sample.h2;
+//   const date = document.createElement("p");
+//   date.classList.add("date");
+//   date.textContent = sample.date;
+//   const p1 = document.createElement("p");
+//   p1.textContent = sample.p1;
+//   const p2 = document.createElement("p");
+//   p2.textContent = sample.p2;
+//   const expandBtn = document.createElement("span");
+//   expandBtn.classList.add("expandButton");
+//   expandBtn.textContent = "expand";
+//   const closeBtn = document.createElement("span");
+//   closeBtn.classList.add("closeBtn");
+//   closeBtn.textContent = "Click to Close";
+
+//   container.appendChild(article);
+//   article.appendChild(h2);
+//   article.appendChild(date);
+//   article.appendChild(p1);
+//   article.appendChild(p2);
+//   article.appendChild(expandBtn);
+//   article.appendChild(closeBtn);
+
+//   const product = new Article(article);
+//   return product;
