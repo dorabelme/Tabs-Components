@@ -66,47 +66,16 @@ links = document.querySelectorAll(".tabs-link").forEach(link => new TabLink(link
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function tabBuilder(sample){
-//   const article = document.createElement(".tabs-item");
+
+//   const article = document.createElement("div");
 //   article.classList.add(".tabs-item");
 //   const title = document.createElement("div");
-//   h2.textContent = sample.h2;
-//   const date = document.createElement("p");
-//   date.classList.add("date");
-//   date.textContent = sample.date;
-//   const p1 = document.createElement("p");
-//   p1.textContent = sample.p1;
-//   const p2 = document.createElement("p");
-//   p2.textContent = sample.p2;
-//   const expandBtn = document.createElement("span");
-//   expandBtn.classList.add("expandButton");
-//   expandBtn.textContent = "expand";
-//   const closeBtn = document.createElement("span");
-//   closeBtn.classList.add("closeBtn");
-//   closeBtn.textContent = "Click to Close";
-
+//   title.textContent = sample.title;
+//   const description = document.createElement("div");
+//   description.classList.add(".tabs-item-description");
+//   description.textContent = sample.description;
+  
 //   container.appendChild(article);
 //   article.appendChild(h2);
 //   article.appendChild(date);
